@@ -4,6 +4,8 @@ N=$1
 
 ./cleanup.sh ${N}
 
+set -e
+
 for i in $(seq 0 ${N}); do
 	LINK=""
 	PORT=""
