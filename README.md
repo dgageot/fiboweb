@@ -2,13 +2,13 @@ Fibonacci with a network of Dockers
 
 This version of Fibonacci uses Docker to spwan web servers that communicate one with the others.
 
-Each web server knows the value of the Nth Fibonnai number.
+Each web server knows the value of the Nth Fibonacci number.
 To know this value, it has to connect to the web server that knows N-2 and the web server that knows N-1.
 
 Our script `startNetwork.sh` takes N as a parameter and spawns N docker daemons. Each docker container
-expect #0 and #1 is linked to two other docker containers so that it can query them on their port 8000.
+expect #0 and #1 is [linked](https://docs.docker.com/userguide/dockerlinks/) to two other docker containers so that it can query them on their port 8000.
 
-The last docker container maps port 8000 to the host so that it can be queried.
+The last docker container maps its 8000 port to the host so that it can be queried.
 
 # Build
 
